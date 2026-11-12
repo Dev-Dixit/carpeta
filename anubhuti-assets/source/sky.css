@@ -1,0 +1,54 @@
+/* Exploration only: morning to starry night. Loaded by explore-sky.html, never by / */
+.tlb{background:linear-gradient(var(--paper),var(--paper2,#f8e3d6))!important}
+.sec::before{transition:opacity .6s}
+.skyl{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none}
+#stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.game.night .gcopy h2{color:#fff8ef;text-shadow:0 2px 30px rgba(20,20,60,.35)}
+.game.night .gcopy p{color:rgba(255,246,236,.82)}
+.game.night .gfoot{color:rgba(255,246,236,.6)}
+.game .gcopy h2,.game .gcopy p,.game .gfoot{transition:color .8s}
+.game.night .steps li{background:rgba(40,40,80,.35);color:rgba(255,246,236,.85)}
+.game.night .steps li.on{background:#fff;color:var(--ink)}
+.game.night .gskip{background:rgba(30,30,70,.45);border-color:rgba(255,255,255,.18)}
+.game.night .gskip a,.game.night .gskip button,.game.night .gs-l{color:#fff8ef}
+.game.night .gskip .gs-mail{color:var(--ink)}
+.game.night .gskip a:hover,.game.night .gskip button:hover{background:rgba(255,255,255,.14)}
+.game.night .gs-sep{background:rgba(255,255,255,.25)}
+.game.night .gring{border-color:rgba(255,214,150,.6)!important}
+/* the time dial */
+.dial{position:fixed;right:18px;bottom:18px;z-index:50;display:flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;border-radius:999px;background:rgba(255,251,247,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.7);box-shadow:0 14px 30px -18px rgba(80,40,30,.5);font:600 13px/1 Switzer,system-ui,sans-serif;color:var(--ink);transition:background .6s,color .6s;cursor:pointer}
+.dial svg{width:54px;height:30px;overflow:visible}
+.dial .lb{display:grid;gap:3px}.dial .lb small{font-weight:500;font-size:11px;color:var(--ink2);transition:color .6s}
+.dial.dark{background:rgba(30,30,70,.6);color:#fff8ef;border-color:rgba(255,255,255,.15)}.dial.dark small{color:rgba(255,246,236,.7)}
+.dial .tip{position:absolute;right:0;bottom:calc(100% + 10px);width:230px;padding:12px 14px;border-radius:16px;background:#fffaf3;color:var(--ink);font-weight:500;font-size:13px;line-height:1.4;box-shadow:0 18px 40px -20px rgba(80,40,30,.5);opacity:0;translate:0 6px;transition:opacity .3s,translate .4s;pointer-events:none}
+.dial:hover .tip,.dial:focus-visible .tip{opacity:1;translate:0 0}
+.dial-menu{position:absolute;right:0;bottom:calc(100% + 10px);width:210px;padding:6px;border-radius:20px;background:rgba(255,251,247,.96);border:1px solid #fff;box-shadow:0 18px 44px -22px rgba(80,40,30,.55);display:grid;gap:2px;opacity:0;translate:0 8px;pointer-events:none;transition:opacity .25s,translate .35s;color:var(--ink)}
+.dial-menu.open{opacity:1;translate:0 0;pointer-events:auto}
+.dial-menu button{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:15px;font:600 13px/1 Switzer,system-ui,sans-serif;color:var(--ink);text-align:left}
+.dial-menu button b{font-size:11px;color:var(--accent);letter-spacing:.02em}
+.dial-menu button:hover{background:#fff}
+.dial.dark .dial-menu{background:rgba(30,30,70,.88);border-color:rgba(255,255,255,.18);color:#fff8ef}.dial.dark .dial-menu button{color:#fff8ef}.dial.dark .dial-menu button:hover{background:rgba(255,255,255,.12)}
+/* mode 2: one sky behind the whole page */
+.m2 #skyfix{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.m2 #skyfix canvas{position:absolute;inset:0;width:100%;height:100%}
+.m2 .sec,.m2 .tlb{background:transparent!important}
+.m2 #after{position:relative;z-index:0}
+.m2 .sec::before{opacity:.5}
+.m2.dusk .sec h2,.m2.dusk .sec h3,.m2.dusk .sh p{transition:color .6s}
+/* mode 3 extras */
+.ff{position:absolute;width:6px;height:6px;border-radius:50%;background:#ffe2a6;box-shadow:0 0 12px 4px rgba(255,210,140,.7);pointer-events:none;opacity:0}
+.sw{position:fixed;left:16px;top:50%;translate:0 -50%;z-index:60;display:grid;gap:2px;padding:4px;border-radius:18px;background:rgba(25,20,18,.82);backdrop-filter:blur(10px)}
+.sw a{font:600 12px/1 Switzer,system-ui,sans-serif;color:rgba(255,255,255,.7);padding:9px 11px;border-radius:14px;text-decoration:none;text-align:center}
+.sw a.on{background:#fff;color:#2b3236}
+.sw span{font:500 10.5px/1 Switzer;color:rgba(255,255,255,.5);padding:6px 8px 2px}
+
+@media(max-width:700px){.dial{display:none}}
+@media(prefers-reduced-motion:reduce){.gring,.gring::after,.gtag,.ghint{animation:none!important}.dial,.dial .tip,.dial-menu{transition:none!important}}
+.dial{display:none!important}
+/* night: chrome and small print stay readable on the dark sky */
+html.isNight .nav .glass{background:rgba(255,250,245,.9);border-color:rgba(255,255,255,.9)}
+.game.night .gfoot{color:rgba(255,246,236,.86);font-size:13.5px;text-shadow:0 1px 10px rgba(20,20,60,.5)}
+.game.night .gcopy p{color:rgba(255,246,236,.92);text-shadow:0 1px 14px rgba(20,20,60,.35)}
+.game.night .gcopy p a{color:#fff}
+.game.night .steps li{background:rgba(255,250,245,.18);color:#fff8ef;border-color:rgba(255,255,255,.25)}
+.gfoot{bottom:16px}.gskip{bottom:62px}

@@ -1,0 +1,1 @@
+{"name":"portfolio-site","private":true,"scripts":{"dev":"python server.py 3000"}}

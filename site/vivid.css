@@ -1,0 +1,29 @@
+/* Vivid grade: richer paper, no milky haze, cards that sit on colour */
+:root{--paper:#fdf0e2}
+html{background:#f0c9b6}
+.haze{background:radial-gradient(70% 55% at 50% 22%,rgba(255,240,226,.16),transparent 70%)}
+.work{background-image:radial-gradient(rgba(150,80,50,.11) 1px,transparent 1.3px),linear-gradient(180deg,rgba(250,214,190,.55),rgba(250,214,190,0) 38%,rgba(214,232,240,0) 52%,rgba(214,232,240,.42) 76%,rgba(214,232,240,0) 100%);background-size:24px 24px,100% 100%}
+.tlb{background:linear-gradient(var(--paper),#fce9da 40%,#fadfcc)}
+.mo-art{background:radial-gradient(120% 90% at 50% 100%,#f8cfb6,#fbe4d3 60%,#fdf0e6)}
+.f-pat{background:linear-gradient(140deg,#fbd9c6,#fdeee3)!important}
+/* phones and tablets: floating chrome is solid enough to read, and copy fades out before it reaches it */
+@media (max-width:900px),(pointer:coarse){
+ .nav .glass,.mbar.glass{background:rgba(255,250,245,.94)}
+ .topfade{position:fixed;left:0;right:0;top:0;height:86px;z-index:35;pointer-events:none;background:linear-gradient(var(--paper,#fdf0e2) 55%,rgba(253,240,226,0));opacity:0;transition:opacity .35s}
+ html.pastHero .topfade,html.casepg .topfade{opacity:1}
+ html.casepg .topfade{height:128px}
+ .mbar{z-index:36!important}
+}
+
+/* touch: every primary target is at least 44px tall */
+@media (pointer:coarse){
+ .links a,.links button{min-height:44px;display:inline-flex;align-items:center}
+ .card .go,.card.end .go,.mo-go,.next .go,.foot .mail{min-height:44px;display:inline-flex;align-items:center}
+ .gcopy .gmail{display:inline-block;padding:10px 0;margin:-10px 0}
+ .hint{min-height:44px}
+}
+/* case pages: give side media a real gutter so phones never touch the edge or slide under the nav */
+@media (min-width:901px){
+ .story{width:min(1320px,calc(100vw - 112px));margin-left:calc(50% - min(660px,50vw - 56px))}
+ .beat.has-pt .md.phone{margin-right:8px}
+}
